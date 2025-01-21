@@ -13,6 +13,7 @@ from openai import AsyncAzureOpenAI
 from quart import (Blueprint, Quart, jsonify, make_response, render_template,
                    request, send_from_directory)
 
+
 from backend.auth.auth_utils import get_authenticated_user_details
 from backend.history.cosmosdbservice import CosmosConversationClient
 from backend.security.ms_defender_utils import get_msdefender_user_json
