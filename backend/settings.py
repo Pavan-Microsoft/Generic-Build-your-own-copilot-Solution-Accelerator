@@ -3,7 +3,6 @@ import logging
 import os
 from abc import ABC, abstractmethod
 from typing import List, Literal, Optional
-
 from pydantic import (BaseModel, Field, PrivateAttr, ValidationError,
                       ValidationInfo, confloat, conint, conlist,
                       field_validator, model_validator)
