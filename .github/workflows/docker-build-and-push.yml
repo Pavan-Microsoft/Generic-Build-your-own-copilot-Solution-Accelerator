@@ -1,17 +1,19 @@
 name: Build and Push Docker Image
 
 on:
+  push:
+    branches: [main, dev, demo]
   pull_request:
-    types: [closed]
-    branches:
-      - main
-      - dev
-      - demo
-  workflow_dispatch: # Add this line to enable manual triggering
+    branches: [main, dev, demo]
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+  merge_group:
 
 jobs:
   build-and-push:
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
