@@ -2,7 +2,11 @@ name: Build and Push Docker Image
 
 on:
   pull_request:
-    types: [closed]
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
     branches:
       - main
       - dev
@@ -57,3 +61,4 @@ jobs:
           tags: |
             ${{ steps.registry.outputs.registry }}/webapp:${{ steps.determine_tag.outputs.tagname }}
             ${{ steps.registry.outputs.registry }}/webapp:${{ steps.determine_tag.outputs.tagname }}_${{ steps.date.outputs.date }}_${{ github.run_number }}
+
