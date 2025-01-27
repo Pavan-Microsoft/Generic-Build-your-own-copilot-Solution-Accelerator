@@ -11,6 +11,7 @@ DEBUG = os.environ.get("DEBUG", "false")
 if DEBUG.lower() == "true":
     logging.basicConfig(level=logging.DEBUG)
 
+
 AZURE_SEARCH_PERMITTED_GROUPS_COLUMN = os.environ.get(
     "AZURE_SEARCH_PERMITTED_GROUPS_COLUMN"
 )
